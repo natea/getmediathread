@@ -38,6 +38,7 @@
 }
 #content {
   /* 3. Content wrapper */
+  padding: 150px 0;
 }
 #content-below {
   /* 4. Content Below wrapper */
