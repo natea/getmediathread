@@ -83,3 +83,10 @@
  * Other stuff
  *--------------------------------------------------
  */
+
+#footer .subfooter li {
+  display: inline-block;
+  list-style-image: none;
+  list-style-position: outside;
+  padding-right: 5px;
+}
