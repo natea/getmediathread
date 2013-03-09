@@ -23,6 +23,8 @@
 <!--[if IE 7]>
 <link rel="stylesheet" href="{{ STATIC_URL }}fontawesome/css/font-awesome-ie7.min.css">
 <![endif]-->
+<!-- Flexslider -->
+<link rel="stylesheet" href="{{ STATIC_URL }}css/flexslider.css" >
 <link rel="stylesheet" href="{{ STATIC_URL }}css/mezzanine.css">
 {% if LANGUAGE_BIDI %}
 <link rel="stylesheet" href="{{ STATIC_URL }}css/rtl.css">
@@ -30,6 +32,12 @@
 {% ifinstalled cartridge.shop %}
 <link rel="stylesheet" href="{{ STATIC_URL }}css/cartridge.css">
 {% endifinstalled %}
+<!-- Theme style -->
+<link rel="stylesheet" href="{{ STATIC_URL }}css/theme-style.css">
+<!--Your custom colour override-->
+<link href="#" id="colour-scheme" rel="stylesheet">
+<!-- Your custom override -->
+<link rel="stylesheet" href="{{ STATIC_URL }}css/custom-style.css">
 {% block extra_css %}{% endblock %}
 {% endcompress %}
 
