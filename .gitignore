@@ -34,5 +34,6 @@ nosetests.xml
 .project
 .pydevproject
 
-docs/_html
-docs/build
+docs/_build
+docs/_static
+docs/_templates
