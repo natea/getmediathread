@@ -38,7 +38,7 @@
 }
 #content {
   /* 3. Content wrapper */
-  padding: 150px 0;
+  padding: 75px 0;
 }
 #content-below {
   /* 4. Content Below wrapper */
@@ -89,4 +89,8 @@
   list-style-image: none;
   list-style-position: outside;
   padding-right: 5px;
+}
+
+img {
+  box-shadow: 0 0 0 transparent;
 }
