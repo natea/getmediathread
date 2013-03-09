@@ -2,9 +2,8 @@
 <html lang="{{ LANGUAGE_CODE }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
 {% load pages_tags mezzanine_tags i18n future %}
 <head>
-
-<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
 <meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
 <meta name="description" content="{% block meta_description %}{% endblock %}">
 <title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
@@ -60,98 +59,225 @@ $(function() {
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ STATIC_URL }}img/icons/114x114.png">
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ STATIC_URL }}img/icons/72x72.png">
 <link rel="apple-touch-icon-precomposed" href="{{ STATIC_URL }}img/icons/default.png">
+
+<!-- Fonts -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300|Rambla|Calligraffitti' rel='stylesheet' type='text/css'>
+
 {% block extra_head %}{% endblock %}
 
 </head>
-<body id="{% block body_id %}body{% endblock %}">
+<body class="page page-fixed-header has-navbar-fixed-top" id="{% block body_id %}body{% endblock %}">
 
-<div class="navbar">
-<div class="navbar-inner">
-<div class="container">
-    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </a>
-    {% if settings.SITE_TITLE %}<a class="brand" href="/">{{ settings.SITE_TITLE }}</a>{% endif %}
-    {% if settings.SITE_TAGLINE %}<p class="tagline">{{ settings.SITE_TAGLINE }}</p>{% endif %}
-    <div class="nav-collapse">
-        {% search_form "all" %}
+<div id="navigation" class="wrapper">
+  <div class="navbar navbar-inverse navbar-fixed-top"> 
+    
+    <!--Hidden Header Region-->
+    <div class="header-hidden">
+      <div class="header-hidden-inner container">
+        <div class="row-fluid">
+          <div class="span4">
+            <h3>About Us</h3>
+            <p>Making the web a prettier place one template at a time! We make beautiful, quality, responsive Drupal & web templates!</p>
+            <a href="about.htm" class="btn btn-mini btn-primary">Find out more</a> </div>
+          <div class="span4"> 
+            <!--@todo: replace with company contact details-->
+            <h3>Contact Us</h3>
+            <address>
+            <p><abbr title="Phone"><i class="icon-phone"></i></abbr> 019223 8092344</p>
+            <p><abbr title="Email"><i class="icon-envelope"></i></abbr> info@themelize.me</p>
+            <p><abbr title="Address"><i class="icon-home"></i></abbr> Sunshine House, Sunville. SUN12 8LU.</p>
+            </address>
+          </div>
+          <div class="span4"> 
+            <!--Colour Switch for demo - @todo: remove in production-->
+            <div class="colour-switcher">
+              <h3>Theme Colours</h3>
+              <a href="#green" class="green active _tooltip" data-placement="bottom" data-original-title="Green (Default)">Green</a> <a href="#red" class="red _tooltip" data-placement="bottom" data-original-title="Red">Red</a> <a href="#blue" class="blue _tooltip" data-placement="bottom" data-original-title="Blue">Blue</a>
+              <p>Cookies are NOT enabled so colour selection is not persistent.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+    <!--Header & Branding region-->
+    <div class="header">
+      <div class="header-inner container">
+        <div class="row-fluid">
+          <div class="span6"> 
+            <!--branding/logo--> 
+		    {% if settings.SITE_TITLE %}<a class="brand" href="/" title="Home"><h1>{{ settings.SITE_TITLE }}</h1></a>{% endif %}
+		    <!--{% if settings.SITE_TAGLINE %}<p class="slogan">{{ settings.SITE_TAGLINE }}</p>{% endif %}-->
+          </div>
+          
+          <!--header rightside-->
+          <div class="span6">
+            <div id="header-hidden-link"> <a href="#" class="show-hide" title="Click me you'll get a surprise" data-target=".header-hidden"><i></i>Open</a> </div>
+            
+            <!--social media icons-->
+            <div class="social-media pull-right"> 
+              <!--TODO: replace with company social media details--> 
+              <a href="#"><i class="icon-twitter"></i></a> <a href="#"><i class="icon-facebook"></i></a> <a href="#"><i class="icon-linkedin"></i></a> <a href="#"><i class="icon-google-plus"></i></a> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="navbar-inner"> 
+
+        <!--mobile collapse menu button--> 
+        <a class="btn btn-navbar pull-left" data-toggle="collapse" data-target=".nav-collapse"> 
+        	<span class="icon-bar"></span> 
+        	<span class="icon-bar"></span> 
+        	<span class="icon-bar"></span> 
+        	<span class="icon-bar"></span> 
+        </a> 
+        
+        <!--user menu-->
+        <ul class="nav user-menu pull-right">
+          <li><a href="signup.htm" class="btn btn-primary signup">Sign Up</a></li>
+          <li class="dropdown"> <a href="login.htm" class="btn btn-primary dropdown-toggle login" id="login-drop" data-toggle="dropdown">Login</a>
+            <div class="dropdown-menu" role="menu" aria-labelledby="login-drop">
+              <form action="login.htm" class="form-inline" id="login-form-drop" role="menuitem">
+                <div class="input-append">
+                  <input type="text" class="input-small email" placeholder="Email">
+                  <input type="password" class="input-small password" placeholder="Password">
+                  <input type="button" class="btn btn-primary login" value="Login">
+                </div>
+              </form>
+              <span class="divider" role="menuitem"></span> <small role="menuitem">Not a member? <a href="#" class="signup">Sign up now!</a></small> <small role="menuitem"><a href="#">Forgotten password?</a></small> </div>
+          </li>
+        </ul>
+        
+        <!--everything within this div is collapsed on mobile-->
+        <div class="nav-collapse collapse"> 
+
         {% page_menu "pages/menus/dropdown.html" %}
+
+        </div>
+        <!--/.nav-collapse --> 
+      </div>
     </div>
-</div>
-</div>
-</div>
-
-<div class="container">
-
-{% nevercache %}
-{% for message in messages %}
-<div class="alert alert-{{ message.tags }}" data-alert="alert">
-<a class="close" href="#" onclick="$(this).parent().fadeOut('fast'); return false;">×</a>{{ message }}
-</div>
-{% endfor %}
-{% endnevercache %}
-
-
-<h1>{% block title %}{% endblock %}</h1>
-
-<ul class="breadcrumb">
-{% spaceless %}
-{% block breadcrumb_menu %}{% page_menu "pages/menus/breadcrumb.html" %}{% endblock %}
-{% endspaceless %}
-</ul>
-
+  </div>
 </div>
 
-<div class="container">
-<div class="row">
+<div id="content">
 
-<div class="span2 left">
-    {% block left_panel %}
-    <div class="panel tree">{% page_menu "pages/menus/tree.html" %}</div>
-    {% endblock %}
+  <div class="container">
+  {% nevercache %}
+  {% for message in messages %}
+  <div class="alert alert-{{ message.tags }}" data-alert="alert">
+  <a class="close" href="#" onclick="$(this).parent().fadeOut('fast'); return false;">×</a>{{ message }}
+  </div>
+  {% endfor %}
+  {% endnevercache %}
+
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <!-- sidebar -->
+      <div class="span3 left sidebar">
+          {% block left_panel %}
+          <div class="panel tree">{% page_menu "pages/menus/tree.html" %}</div>
+          {% endblock %}
+      </div>
+      <!-- main content -->
+      <div class="span9 middle">
+          <h1>{% block title %}{% endblock %}</h1>
+
+          <ul class="breadcrumb">
+          {% spaceless %}
+          {% block breadcrumb_menu %}{% page_menu "pages/menus/breadcrumb.html" %}{% endblock %}
+          {% endspaceless %}
+          </ul>
+
+          {% block main %}{% endblock %}
+      </div>
+
+  <!--
+  <div class="span3 right">
+      {% nevercache %}
+      {% include "includes/user_panel.html" %}
+      {% endnevercache %}
+      <div class="panel">
+      {% block right_panel %}
+      {% ifinstalled mezzanine.twitter %}
+      {% include "twitter/tweets.html" %}
+      {% endifinstalled %}
+      {% endblock %}
+      </div>
+  </div>
+  -->
+    </div><!-- ./row -->
+  </div><!-- ./container -->
+
 </div>
 
-<div class="span7 middle">
-    {% block main %}{% endblock %}
-</div>
-
-<div class="span3 right">
-    {% nevercache %}
-    {% include "includes/user_panel.html" %}
-    {% endnevercache %}
-    <div class="panel">
-    {% block right_panel %}
-    {% ifinstalled mezzanine.twitter %}
-    {% include "twitter/tweets.html" %}
-    {% endifinstalled %}
-    {% endblock %}
+<div id="content-below" class="wrapper">
+  <div class="container">
+    <div class="row-fluid">
+      <div class="upsell"> <small class="muted">99.9% Uptime <span class="spacer">//</span> Free upgrade assistence <span class="spacer">//</span> 24/7 Support <span class="spacer">//</span> Plans from $19.99/month <span class="spacer">//</span> </small> <a href="pricing.htm" class="btn btn-primary">Start your Free Trial Today! <i class="icon-arrow-right"></i></a> </div>
     </div>
+  </div>
 </div>
 
-</div>
-</div>
+<!-- footer -->
 
-<footer>
-<div class="container">
-{% page_menu "pages/menus/footer.html" %}
-<br style="clear:both">
-<p>
-    {% trans "Powered by" %}
-    <a href="http://mezzanine.jupo.org">Mezzanine</a>{% ifinstalled cartridge.shop %},
-    <a href="http://cartridge.jupo.org">Cartridge</a>{% endifinstalled %}
-    {% trans "and" %}
-    <a href="http://www.djangoproject.com">Django</a>
-    <span class="separator">|</span>
-    {% trans "Theme by" %} <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>
-    {% ifinstalled mezzanine.mobile %}
-    <span class="separator">|</span>
-    <a href="{% url "set_device" "mobile" %}?next={{ request.path }}">{% trans "View Mobile Site" %}</a>
-    {% endifinstalled %}
-</p>
+<div id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="span3 col">
+        <div class="block contact-block"> 
+          <!--TODO: replace with company contact details-->
+          <h3>Contact Us</h3>
+          <address>
+          <p><abbr title="Phone"><i class="icon-phone"></i></abbr> 019223 8092344</p>
+          <p><abbr title="Email"><i class="icon-envelope"></i></abbr> info@appstrap.me</p>
+          <p><abbr title="Address"><i class="icon-home"></i></abbr> Sunshine House, Sunville. SUN12 8LU.</p>
+          </address>
+        </div>
+      </div>
+      <div class="span5 col">
+          <div class="block">
+          <h3>About Us</h3>
+          <p>Making the web a prettier place one template at a time! We make beautiful, quality, responsive Drupal &amp; web templates!</p>
+          </div>
+      </div>
+      <div class="span4 col">
+        <div class="block newsletter">
+          <h3>Newsletter</h3>
+          <p>Stay up to date with our latest news and product releases by signing up to our newsletter.</p>
+          <!--@todo: replace with mailchimp code-->
+          <form class="form-inline">
+            <div class="input-append">
+              <input class="input-medium" type="text" placeholder="Email" />
+              <button class="btn btn-primary" type="button">Go!</button>
+            </div>
+          </form>
+        </div><!--/.block newsletter -->
+      </div><!--/.span4 col -->
+    </div><!--/.row -->
+
+    <div class="row-fluid">
+      <div id="toplink"><a href="#top" class="top-link" title="Back to top">Back To Top <i class="icon-chevron-up"></i></a></div>
+      <!--@todo: replace with company copyright details-->
+      <div class="subfooter">
+        <div class="span6">
+          <p>Site template by <a href="#">AppStrap</a> | Copyright 2012 &copy; AppStrap</p>
+        </div>
+        <div class="span6">
+          <ul class="inline pull-right">
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div><!--/.subfooter -->
+    </div><!--/.row-fluid -->
+  </div><!--/.container -->
 </div>
-</footer>
 
 <!--Non-Bootstrap JS--> 
 <script src="{{ STATIC_URL }}js/jquery.quicksand.js"></script> 
