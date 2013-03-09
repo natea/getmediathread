@@ -1,5 +1,5 @@
-getmediathread
-==============
+GetMediathread.com
+==================
 
 Mezzanine-based project for getmediathread.com
 
@@ -36,3 +36,17 @@ Now copy the appstrap homepage template that you want to use into your app's tem
 
 	$ cp /path/to/appstrap/fixed-header.htm apps/theme/templates/
 
+Now copy the static assets, based on what you see appearing as 404s in the Chrome inspector::
+
+	$ cp /path/to/appstrap/css/theme-style.css apps/theme/static/css/
+	$ cp /path/to/appstrap/css/custom-style.css apps/theme/static/css/
+ 	$ cp /path/to/appstrap/js/script.js apps/theme/static/js/
+ 	$ cp /path/to/appstrap/js/jquery.flexslider-min.js apps/theme/static/js/
+	$ cp /path/to/appstrap/js/jquery.quicksand.js apps/theme/static/js/
+	$ cp /path/to/appstrap/img/features/* apps/theme/static/img/features/
+	$ cp /path/to/appstrap/img/bg* apps/theme/static/img/
+
+Now we need to override the dropdown.html menu, so we must copy the Mezzanine one into our custom templates dir, preserving the same folder structure::
+
+	$ cp templates/pages/menus/dropdown.html apps/theme/templates/pages/menus/
+	$ cp templates/pages/menus/tree.html apps/theme/templates/pages/menus/
