@@ -119,21 +119,7 @@ $(function() {
         	<span class="icon-bar"></span> 
         </a> 
         
-        <!--user menu-->
-        <ul class="nav user-menu pull-right">
-          <li><a href="signup.htm" class="btn btn-primary signup">Sign Up</a></li>
-          <li class="dropdown"> <a href="login.htm" class="btn btn-primary dropdown-toggle login" id="login-drop" data-toggle="dropdown">Login</a>
-            <div class="dropdown-menu" role="menu" aria-labelledby="login-drop">
-              <form action="login.htm" class="form-inline" id="login-form-drop" role="menuitem">
-                <div class="input-append">
-                  <input type="text" class="input-small email" placeholder="Email">
-                  <input type="password" class="input-small password" placeholder="Password">
-                  <input type="button" class="btn btn-primary login" value="Login">
-                </div>
-              </form>
-              <span class="divider" role="menuitem"></span> <small role="menuitem">Not a member? <a href="#" class="signup">Sign up now!</a></small> <small role="menuitem"><a href="#">Forgotten password?</a></small> </div>
-          </li>
-        </ul>
+        {% include "accounts/includes/user_panel.html" %}
         
         <!--everything within this div is collapsed on mobile-->
         <div class="nav-collapse collapse"> 
