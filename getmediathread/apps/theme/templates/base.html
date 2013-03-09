@@ -189,9 +189,16 @@ $(function() {
         </div>
       </div>
       <div class="span5 col">
-          <div class="block">
-          <h3>About Us</h3>
-          <p>Making the web a prettier place one template at a time! We make beautiful, quality, responsive Drupal &amp; web templates!</p>
+          <div class="block recent-posts">
+            {% load blog_tags keyword_tags i18n %}
+            {% blog_recent_posts 5 as recent_posts %}
+            {% if recent_posts %}
+            <h3>{% trans "Recent Posts" %}</h2>
+            {% for recent_post in recent_posts %}
+            <a href="{{ recent_post.get_absolute_url }}">{{ recent_post.title }}</a>&nbsp;|&nbsp;<small>{{ recent_post.publish_date|timesince }} {% trans "ago" %}</small><br />
+            {% endfor %}
+            {% endif %}
+            <!-- /Recent Posts -->
           </div>
       </div>
       <div class="span4 col">
