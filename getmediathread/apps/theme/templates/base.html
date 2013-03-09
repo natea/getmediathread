@@ -8,7 +8,6 @@
 <meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
 <meta name="description" content="{% block meta_description %}{% endblock %}">
 <title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
-<link rel="shortcut icon" href="{{ STATIC_URL }}img/favicon.ico">
 
 {% ifinstalled mezzanine.blog %}
 <link rel="alternate" type="application/rss+xml" title="RSS" href="{% url "blog_post_feed" "rss" %}">
@@ -56,6 +55,11 @@ $(function() {
 <script src="{{ STATIC_URL }}js/html5shiv.js"></script>
 <![endif]-->
 
+<!-- Le fav and touch icons - TODO: fill with your icons or remove -->
+<link rel="shortcut icon" href="{{ STATIC_URL }}img/icons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ STATIC_URL }}img/icons/114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ STATIC_URL }}img/icons/72x72.png">
+<link rel="apple-touch-icon-precomposed" href="{{ STATIC_URL }}img/icons/default.png">
 {% block extra_head %}{% endblock %}
 
 </head>
