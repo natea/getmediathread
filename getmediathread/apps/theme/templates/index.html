@@ -4,25 +4,124 @@
 {% block meta_title %}{% trans "Home" %}{% endblock %}
 {% block title %}{% trans "Home" %}{% endblock %}
 
-{% block breadcrumb_menu %}
-<li class="active">{% trans "Home" %}</li>
+{% block hero %}
+ 
+<!-- Modal video player -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Intro to Mediathread</h3>
+  </div>
+  <div class="modal-body">
+  	This will be replaced by a video.
+  </div>
+</div>
+
+<div class="hero" id="highlighted">
+  <div class="inner"> 
+    <!--Flexslider Showshow-->
+    <section class="flexslider-wrapper container">
+      <div class="flexslider" data-slidernav="auto" data-transition="slide"> 
+        <!--The Slides-->
+        <div class="slides"> 
+          
+          <!--Slide #0 with caption-->
+          <div class="slide row-fluid">
+            <div class="span7"><a href="#myModal" role="button" data-toggle="modal"><img src="{{ STATIC_URL}}img/slides/mediathread_youtube.png" alt="Intro to Mediathread" /></a></div>
+            <div class="span5 caption">
+              <h2>What is Mediathread?</h2>
+			<p>Mediathread is an innovative new platform that supports multimedia analysis within a communal environment. Users of Mediathread are able to lift video, audio, and image items from a range of digital collections and then work with them in a course-specific website.</p>
+              <button class="btn btn-primary btn-large" type="button" data-toggle="modal" data-target="#myModal">Watch a short video</button>
+          </div>
+          </div>
+
+          <div class="slide row-fluid">
+            <div class="span7"><img src="{{ STATIC_URL}}img/slides/mediathread_americanempire2.jpg" alt="Projecting the American Empire on Film" /></div>
+            <div class="span5 caption">
+              <h2>Film, television, and cultural studies</h2>
+			<p>Students at Barnard College undertake close, careful inspection of assigned films through weekly, short-form "bullet-memos" of no more than 175 words. They are required to make at least two annotated selections per film and embed the selections into their essays to support their claims.</p>
+			<p>Classmates share completed multimedia essays with each other, driving group discussion and learning from peers. Mediathread also allows the instructor gives multimedia feedback and individualized critique of student postings.</p>
+              <a href="#" class="btn btn-large btn-primary">Learn more</a> </div>
+          </div>
+          
+          <!--Slide #2 with caption-->
+          <div class="slide row-fluid">
+            <div class="span7"><img src="{{ STATIC_URL}}img/slides/mediathread_mathematicalthinking.jpg" alt="Projecting the American Empire on Film" /></div>
+            <div class="span5 caption">
+              <h2>Teacher Education</h2>
+			<p>Professor Pappas Schattman uses Mediathread throughout her course on early childhood mathematics education, a course that focuses on theories of developmental psychology as well as teaching and assessment practices derived from research.</p>
+			<p>A series of assignments integrating readings with video footage prepares students to discuss and debate interpretations of learning behavior.</p>
+              <a href="#" class="btn btn-large btn-primary">Learn more</a> </div>
+          </div>
+          
+          <!--Slide #3 with caption-->
+          <div class="slide row-fluid">
+            <div class="span7"><img src="{{ STATIC_URL}}img/slides/mediathread_sswroleplay.jpg" alt="Clinical training for Social Work students" /></div>
+            <div class="span5 caption">
+              <h2>Social Work</h2>
+			<p>Students watch videos of clinical sessions and role-play assignments, clip segments, and make annotations. They then add the video annotations to essays in which they analyze theoretical models and clinical techniques and reflect on their own intervention methods.
+			</p>
+			<p>These multimedia essays encourage closer readings of clinician/patient interactions and improve students' evidence-based reasoning. Sharing completed multimedia essays with other social work students fosters group discussion and learning from peers.</p>
+              <a href="#" class="btn btn-large btn-primary">Learn more</a> </div>
+          </div> 
+          
+        </div><!-- /.slides -->
+      </div><!-- /.flexslider -->
+    </section>
+  </div><!-- /.inner -->
+ </div><!-- /.hero -->
 {% endblock %}
 
-{% block main %}
-{% blocktrans %}
-<h2>Congratulations!</h2>
-<p>
-    Welcome to your new Mezzanine powered website.
-    Here are some quick links to get you started:
-</p>
-<ul>
-    <li><a href="/admin/">Log in to the admin interface</a></li>
-    <li><a href="http://mezzanine.jupo.org/docs/content-architecture.html">Creating custom page types</a></li>
-    <li><a href="http://mezzanine.jupo.org/docs/frequently-asked-questions.html#templates">Modifying HTML templates</a></li>
-    <li><a href="http://mezzanine.jupo.org/docs/frequently-asked-questions.html#why-isn-t-the-homepage-a-page-object-i-can-edit-via-the-admin">Changing this homepage</a></li>
-    <li><a href="http://mezzanine.jupo.org/docs/frequently-asked-questions.html">Other frequently asked questions</a></li>
-    <li><a href="http://mezzanine.jupo.org/docs/configuration.html#default-settings">Full list of settings</a></li>
-    <li><a href="http://mezzanine.jupo.org/docs/deployment.html">Deploying to a production server</a></li>
-</ul>
-{% endblocktrans %}
+{% block content %}
+
+<div id="content">
+  <div class="container"> 
+    
+    <!-- Services -->
+    <div class="block features">
+      <h2 class="title-divider"><span>Core <span class="de-em">Features</span></span> <small>Core features included in all plans.</small></h2>
+      <ul class="thumbnails">
+        <li class="span3"> <a href="features.htm"><img src="{{ STATIC_URL}}img/features/feature-1.png" alt="Feature 1" /></a>
+          <h3 class="title"><a href="features.htm">Mobile <span class="de-em">Friendly</span></a></h3>
+          <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio! Elementum tortor sociis in eu dis dictumst pulvinar lorem nec aliquam a nascetur.</p>
+        </li>
+        <li class="span3"> <a href="features.htm"><img src="{{ STATIC_URL}}img/features/feature-2.png" alt="Feature 2" /></a>
+          <h3 class="title"><a href="features.htm">24/7 <span class="de-em">Support</span></a></h3>
+          <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio! Elementum tortor sociis in eu dis dictumst pulvinar lorem nec aliquam a nascetur.</p>
+        </li>
+        <li class="span3"> <a href="features.htm"><img src="{{ STATIC_URL}}img/features/feature-3.png" alt="Feature 3" /></a>
+          <h3 class="title"><a href="features.htm">Free Upgrade <span class="de-em">Assistance</span></a></h3>
+          <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio! Elementum tortor sociis in eu dis dictumst pulvinar lorem nec aliquam a nascetur.</p>
+        </li>
+        <li class="span3"> <a href="features.htm"><img src="{{ STATIC_URL}}img/features/feature-4.png" alt="Feature 4" /></a>
+          <h3 class="title"><a href="features.htm">99.9% <span class="de-em">Uptime</span></a></h3>
+          <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio! Elementum tortor sociis in eu dis dictumst pulvinar lorem nec aliquam a nascetur.</p>
+        </li>
+      </ul>
+    </div>
+    
+    <!--Customer testimonial-->
+    <div class="block testimonials margin-top-large">
+      <h2 class="title-divider"><span>Highly <span class="de-em">Recommended</span></span> <small>99% of our customers recommend us!</small></h2>
+      <div class="row">
+        <div class="span4">
+          <blockquote>
+            <p>"It's totally awesome, we're could imagine life without it!"</p>
+            <small><img src="{{ STATIC_URL}}img/team/jimi.jpg" alt="Jimi Bloggs" class="img-circle" /> Jimi Bloggs <span class="spacer">/</span> <a href="#">@mrjimi</a></small> </blockquote>
+        </div>
+        <div class="span4">
+          <blockquote>
+            <p>"10 out of 10, highly recommended!"</p>
+            <small><img src="{{ STATIC_URL}}img/team/jobs.jpg" alt="Jimi Bloggs" class="img-circle" /> Steve Bloggs <span class="spacer">/</span> <a href="#">Founder of Apple</a></small> </blockquote>
+        </div>
+        <div class="span4">
+          <blockquote>
+            <p>"Our productivity & sales are up! Couldn't be happier with this product!"</p>
+            <small><img src="{{ STATIC_URL}}img/team/adele.jpg" alt="Adele Bloggs" class="img-circle" /> Adele Bloggs <span class="spacer">/</span> <a href="#">@iamadele</a></small> </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 {% endblock %}

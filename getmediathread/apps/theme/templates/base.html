@@ -9,6 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
 
+<!-- TODO: replace these links with Feedburner feeds -->
 {% ifinstalled mezzanine.blog %}
 <link rel="alternate" type="application/rss+xml" title="RSS" href="{% url "blog_post_feed" "rss" %}">
 <link rel="alternate" type="application/atom+xml" title="Atom" href="{% url "blog_post_feed" "atom" %}">
@@ -25,18 +26,21 @@
 <!-- Flexslider -->
 <link rel="stylesheet" href="{{ STATIC_URL }}css/flexslider.css" >
 <link rel="stylesheet" href="{{ STATIC_URL }}css/mezzanine.css">
+
 {% if LANGUAGE_BIDI %}
 <link rel="stylesheet" href="{{ STATIC_URL }}css/rtl.css">
 {% endif %}
+
 {% ifinstalled cartridge.shop %}
 <link rel="stylesheet" href="{{ STATIC_URL }}css/cartridge.css">
 {% endifinstalled %}
+
 <!-- Theme style -->
 <link rel="stylesheet" href="{{ STATIC_URL }}css/theme-style.css">
-<!--Your custom colour override-->
-<link href="#" id="colour-scheme" rel="stylesheet">
+
 <!-- Your custom override -->
 <link rel="stylesheet" href="{{ STATIC_URL }}css/custom-style.css">
+
 {% block extra_css %}{% endblock %}
 {% endcompress %}
 
@@ -98,6 +102,10 @@ $(function() {
   </div>
 </div>
 
+{% block hero %}{% endblock %}
+
+{% block content %}
+
 <div id="content">
 
   <div class="container">
@@ -138,6 +146,8 @@ $(function() {
   </div><!-- ./container -->
 
 </div>
+
+{% endblock %}
 
 <div id="content-below" class="wrapper">
   <div class="container">

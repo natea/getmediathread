@@ -94,3 +94,20 @@
 img {
   box-shadow: 0 0 0 transparent;
 }
+
+.has-navbar-fixed-top #highlighted {
+  margin-top: 75px;
+}
+
+#myModal {
+  width: 900px;
+  height: 600px;
+  left: 40%;
+  top: 40%;
+}
+
+#myModal .modal-body {
+  width: 900px;
+  height: 600px;
+  max-height: 600px;
+}

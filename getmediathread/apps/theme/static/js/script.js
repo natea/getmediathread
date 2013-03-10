@@ -42,18 +42,18 @@ $(document).ready(function() {
   });
   
   //colour switch
-  $('.colour-switcher a').click(function() {
-    var c = $(this).attr('href').replace('#','');
-    $('.colour-switcher a').removeClass('active');
-    $('.colour-switcher a.'+ c).addClass('active');
+  // $('.colour-switcher a').click(function() {
+  //   var c = $(this).attr('href').replace('#','');
+  //   $('.colour-switcher a').removeClass('active');
+  //   $('.colour-switcher a.'+ c).addClass('active');
     
-    if (c != defaultColour) {
-      $('#colour-scheme').attr('href','css/colour-'+ c +'.css');
-    }
-    else {
-      $('#colour-scheme').attr('href', '#');
-    }
-  });
+  //   if (c != defaultColour) {
+  //     $('#colour-scheme').attr('href','css/colour-'+ c +'.css');
+  //   }
+  //   else {
+  //     $('#colour-scheme').attr('href', '#');
+  //   }
+  // });
   
   //flexslider
   $('.flexslider').each(function() {
@@ -101,4 +101,13 @@ $(document).ready(function() {
     e.preventDefault();
   });
   
+  // from http://stackoverflow.com/a/14610053/1851467
+  $('#myModal').on('show', function () {
+    $('div.modal-body').html('<iframe src="http://www.youtube.com/v/NWNxuJ0MK3k&amp;rel=0&amp;autohide=0&amp;showinfo=0&amp;autoplay=1" width="853" height="480" frameborder="0" allowfullscreen></iframe>');  
+  });
+
+  $('#myModal').on('hide', function () {
+    $('div.modal-body').html('');  
+});
+
 });
