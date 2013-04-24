@@ -1,6 +1,7 @@
 Django==1.4.5
 Mezzanine==1.4.3
 South==0.7.6
+psycopg2==2.4.6
 
 # documentation
 Sphinx==1.1.3
