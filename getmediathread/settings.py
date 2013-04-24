@@ -218,6 +218,7 @@ ROOT_URLCONF = "%s.urls" % PROJECT_DIRNAME
 # Don't forget to use absolute paths, not relative paths.
 TEMPLATE_DIRS = (os.path.join(PROJECT_ROOT, "templates"),)
 
+ALLOWED_HOSTS = ('127.0.0.1')
 
 ################
 # APPLICATIONS #
