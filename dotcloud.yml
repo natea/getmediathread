@@ -1,0 +1,10 @@
+www:
+  type: python
+  config:
+    python_version: v2.7
+  environment:
+    DJANGO_SETTINGS_MODULE: getmediathread.dotcloud_settings
+db:
+  type: postgresql
+# cache:
+#    type: redis
